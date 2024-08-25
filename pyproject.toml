@@ -1,0 +1,23 @@
+[project]
+name = "gridiot"
+version = "0.1.0"
+description = "Baseball history search"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit>=1.37.1",
+    "pydantic>=2.8.2",
+    "requests>=2.32.3",
+    "pybaseball>=2.2.7",
+    "polars>=1.5.0",
+    "click>=8.1.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.6.2",
+]

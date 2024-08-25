@@ -1,0 +1,47 @@
+version: 0.7
+
+index_id: players
+
+doc_mapping:
+  mode: lenient
+  field_mappings:
+    - name: fgid
+      type: text
+      description: "Fangraphs ID"
+      indexed: false
+      stored: true
+    - name: player_name
+      type: text
+      description: "Player Name"
+      indexed: true
+      stored: true
+      tokenizer: default
+      fast:
+        normalizer: lowercase
+    - name: season
+      type: i64
+      description: "Season year"
+      indexed: true
+      stored: true
+    - name: team_season_stint
+      type: text
+      description: "Identifies a team played for in a given season"
+      indexed: true
+      stored: true
+      tokenizer: raw
+      fast:
+        normalizer: lowercase
+    - name: positions
+      type: array<text>
+      description: "Positions played"
+      indexed: true
+      stored: true
+      tokenizer: raw
+      fast:
+        normalizer: lowercase
+    - name: stat_war
+      type: f64
+      description: "Wins Above Replacement"
+      indexed: true
+      stored: true
+      fast: true
